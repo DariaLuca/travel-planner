@@ -1,0 +1,156 @@
+{
+  "Countries": {
+    "France": {
+      "Cities": {
+        "Paris": {
+          "Food": {
+            "Kozy Bosquet": { "cost": 20 },
+            "Francette": { "cost": 30 },
+            "Le Cinq": { "cost": 300 },
+            "Du Pain et des Idées": { "cost": 6 },
+            "Le Café Marly": { "cost": 50 },
+            "Restaurant Guy Savoy": { "cost": 600 },
+            "Wild & The Moon": { "cost": 16 },
+            "Sacrée Fleur": { "cost": 40 },
+            "Chambelland": { "cost": 12 },
+            "Le Ju": { "cost": 25 },
+            "Pink Mamma": { "cost": 50 },
+            "Judy, Cantine Qualitarienne": { "cost": 22 },
+            "Papilla": { "cost": 20 },
+            "Le Procope": { "cost": 60 }
+          },
+          "Sightseeing": {
+            "Eiffel Tower": { "cost": 30 },
+            "Seine River Cruise": { "cost": 18 },
+            "Arc de Triomphe": { "cost": 16 },
+            "Louvre Museum": { "cost": 22 },
+            "Place de la Concorde": { "cost": 0 },
+            "Sacré-Cœur Basilica": { "cost": 8 },
+            "Moulin Rouge": { "cost": 0 },
+            "Place des Vosges & Musée Carnavalet": { "cost": 0 },
+            "Centre Pompidou": { "cost": 15 },
+            "Île Saint-Louis": { "cost": 8 },
+            "Luxembourg Gardens - Toy boat rental": { "cost": 4 },
+            "The Panthéon": { "cost": 13 },
+            "Notre Dame": { "cost": 20 }
+          },
+          "Shopping": {
+            "Westfield Forum des Halles": { "cost": 150 }
+          }
+        }
+      }
+    },
+    "Spain": {
+      "Cities": {
+        "Barcelona": {
+          "Food": {
+            "Brunch & Cake": { "cost": 20 },
+            "El Naciona": { "cost": 50 },
+            "Lasarte": { "cost": 300 },
+            "Granja M. Viader": { "cost": 10 },
+            "Mercat de la Boqueria": { "cost": 40 },
+            "Els Quatre Gats": { "cost": 50 }
+          },
+          "Sightseeing": {
+            "Casa Batlló": { "cost": 35 },
+            "Sagrada Família": { "cost": 36 },
+            "Barcelona Cathedral": { "cost": 9 },
+            "Picasso Museum": { "cost": 15 }
+          },
+          "Shopping": {
+            "Santa Eulalia": { "cost": 0 }
+          }
+        },
+        "Valencia": {
+          "Sightseeing": {
+            "City of Arts and Sciences": { "cost": 40 }
+          }
+        },
+        "Madrid": {
+          "Food": {
+            "Churros at San Ginés": { "cost": 8 }
+          },
+          "Sightseeing": {
+            "Prado Museum": { "cost": 15 },
+            "Retiro Park": { "cost": 0 }
+          }
+        }
+      }
+    },
+    "USA": {
+      "Cities": {
+        "New York": {
+          "Food": {
+            "Bagel at Ess-a-Bagel": { "cost": 15 },
+            "Katz's Delicatessen": { "cost": 35 },
+            "Levain Bakery": { "cost": 5 },
+            "Magnolia Bakery": { "cost": 10 },
+            "Dominique Ansel Bakery": {"cost": 8},
+            "Doughnut Plant": {"cost": 5.50},
+            "Taiyaki NYC": {"cost": 10},
+            "Breads Bakery": {"cost": 17},
+            "Supermoon Bakehouse": {"cost": 9},
+            "Librae Bakery": {"cost": 8},
+            "7th Street Burger": {"cost": 9.50},
+            "Los Tacos No. 1": {"cost": 6},
+            "Joe’s Pizza": {"cost": 5},
+            "McDonald’s": {"cost": 12},
+            "Burger King": {"cost": 16},
+            "Wendy’s": {"cost": 12},
+            "Subway": {"cost": 12},
+            "Chick-fil-A": {"cost": 14},
+            "Dunkin": {"cost": 14},
+            "Starbucks": {"cost":  12},
+            "Popeyes": {"cost": 14},
+            "In-N-Out": {"cost": 15},
+            "KFC": {"cost": 16},
+            "Raising Cane’s": {"cost": 15},
+            "Shake Shack": {"cost": 11},
+            "Five Guy": {"cost": 16},
+            "Chipotle": {"cost": 17},
+            "Ocean Drive Nightlife": { "cost": 100 },
+            "Taco Bell": {"cost": 17}
+          }
+        
+      },
+      "Chicago": {
+          "Sightseeing": {
+            "The Bean (Cloud Gate)": { "cost": 0 },
+            "Art Institute of Chicago": { "cost": 25 }
+          },
+          "Food": {
+            "Deep Dish Pizza at Lou Malnati's": { "cost": 30 }
+          }
+        }
+    },
+      
+    "UK": {
+      "Cities": {
+        "London": {
+          "Sightseeing": {
+            "Big Ben & Parliament": { "cost": 0 },
+            "British Museum": { "cost": 0 }
+          },
+          "Food": {
+            "Afternoon Tea at The Ritz": { "cost": 80 }
+          }
+        }
+      }
+    },
+    "Turkey": {
+      "Cities": {
+        "Istanbul": {
+          "Sightseeing": {
+            "Hagia Sophia": { "cost": 0 },
+            "Blue Mosque": { "cost": 0 }
+          },
+          "Food": {
+            "Kebab Lunch": { "cost": 10 }
+          },
+          "Shopping": {
+            "Grand Bazaar": { "cost": 50 }
+          }
+        }
+      }
+     }}}}
+  
