@@ -409,18 +409,35 @@
             }
           },
           "Sightseeing": {
-            "Pyramids of Giza": {
-              "cost": 20
+            "Pyramids of Giza & The Sphinx ": {
+              "cost": 11
             },
-            "The Sphinx": {
-              "cost": 0
+            "The Grand Egyptian Museum": {
+              "cost": 24
             },
-            "Egyptian Museum": {
+            "The Egyptian Museum": {
+              "cost": 9
+            },
+            "National Museum of Egyptian Civilization": {
               "cost": 10
-            }
+            },
+            "Salah El-Din Citadel": {
+              "cost": 9
+            },
+            "Sultan Hassan & Al-Rifa’i Mosques": {
+              "cost": 3.60
+            },
+            "Ibn Tulun Mosque": {
+              "cost": 0
+          },
+            "Coptic Cairo": {
+              "cost": 0
+          },
+            "Baron Empain Palace": {
+              "cost": 3.60
           }
         }
       }
     }
   }
-}
+}}
