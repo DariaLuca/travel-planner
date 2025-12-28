@@ -406,6 +406,48 @@
             },
             "Felfela": {
               "cost": 15
+            },
+            "Koshary at Abou Tarek": {
+              "cost": 1
+            },
+            "Naguib Mahfouz Cafe ": {
+              "cost": 12
+            },
+            "Tea at El Fishawy": {
+              "cost": 0.80
+            },
+            "Stuffed Pigeon at Farahat": {
+              "cost": 5
+            },
+            "Feteer at Feteer El Tahrir": {
+              "cost": 3
+            },
+            "Falafel (Ta'ameya) Sandwich": {
+              "cost": 0.50
+            },
+            "Hawawshi":{
+              "cost": 1.40
+            },
+            "Sugarcane Juice":{
+              "cost": 0.50
+            },
+            "Om Ali Bread pudding with milk, nuts, and cream":{
+              "cost": 2
+            },
+            "Grilled Corn":{
+              "cost": 0.50
+            },
+            "Roasted Sweet Potato":{
+              "cost": 0.60
+            },
+            "Sobia A coconut-milk rice drink":{
+              "cost": 0.50
+            },
+            "Groppi":{
+              "cost": 1.80
+            },
+            "Felucca Ride with Pizza":{
+              "cost": 12
             }
           },
           "Sightseeing": {
@@ -435,6 +477,18 @@
           },
             "Baron Empain Palace": {
               "cost": 3.60
+          },
+          "Cave Church": {
+              "cost": 0
+          },
+          "Cairo Tower": {
+              "cost": 7
+          },
+          "Al-Azhar Park": {
+              "cost": 1
+          },
+          "Nilometer": {
+              "cost": 2
           }
         }
       }
