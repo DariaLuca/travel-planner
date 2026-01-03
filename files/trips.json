@@ -261,10 +261,130 @@
             "Central Park Walk": {
               "cost": 0
             },
-            "Statue of Liberty": {
+            "Statue of Liberty & Ellis Island": {
               "cost": 30
             },
+            "Empire State Building": {
+              "cost": 44
+            },
+            "Top of the Rock": {
+              "cost": 58.79
+            },
+            "One World Observatory": {
+              "cost": 62.60
+            },
+            "Edge at Hudson Yards": {
+              "cost": 51.17
+            },
+            "SUMMIT One Vanderbilt": {
+              "cost": 50
+            },
+            "Metropolitan Museum of Art (The Met)": {
+              "cost": 30
+            },
+            "American Museum of Natural History": {
+              "cost": 30
+            },
+            "Museum of Modern Art (MoMA)": {
+              "cost": 30
+            },
+            "9/11 Memorial & Museum": {
+              "cost": 36
+            },
+            "Guggenheim Museum": {
+              "cost": 30
+            },
+            "Intrepid Museum": {
+              "cost": 38
+            },
+            "Whitney Museum of American Art": {
+              "cost": 30
+            },
+            "Madame Tussauds NYC": {
+              "cost": 50.07
+            },
+            "The Vessel (Climb Tickets)": {
+              "cost": 10
+            },
+            "Museum of Broadway": {
+              "cost": 42.82
+            },
+            "Rise NY": {
+              "cost": 43.55
+            },
+            "SPYSCAPE": {
+              "cost": 44
+            },
+            "Mercer Labs": {
+              "cost": 53.35
+            },
+            "ARTECHOUSE NYC": {
+              "cost": 39
+            },
+            "New York Transit Museum": {
+              "cost": 10
+            },
+            "Tenement Museum": {
+              "cost": 30
+            },
+            "The Frick Collection": {
+              "cost": 25
+            },
+            "The Morgan Library & Museum": {
+              "cost": 25
+            },
+            "New York Historical Society": {
+              "cost": 24
+            },
+            "Museum of the City of New York": {
+              "cost": 23
+            },
+            "Madison Square Garden Tour": {
+              "cost": 52.26
+            },
+            "Radio City Music Hall Tour": {
+              "cost": 44
+            },
+            "Yankee Stadium Tour": {
+              "cost": 43.19
+            },
+            "Circle Line: Landmark Cruise": {
+              "cost": 45
+            },
+            "Catacombs by Candlelight": {
+              "cost": 38
+            },
+            "St. Patrick's Cathedral Tour": {
+              "cost": 22.97
+            },
+            "Brooklyn Botanic Garden": {
+              "cost": 22
+            },
+            "Bronx Zoo": {
+              "cost": 35
+            },
+            "The High Line": {
+              "cost": 0
+            },
+            "Brooklyn Bridge": {
+              "cost": 0
+            },
+            "Staten Island Ferry": {
+              "cost": 0
+            },
+            "Bryant Park": {
+              "cost": 0
+            },
+            "Little Island (Pier 55)": {
+              "cost": 0
+            },
             "Times Square": {
+              "cost": 0
+            },
+            "9/11 Memorial Plaza (Pools)": {
+              "cost": 0
+            },
+            "The Oculus (WTC Hub)": {
               "cost": 0
             }
           }
@@ -383,10 +503,46 @@
               "cost": 50
             },
             "Ichiran Ramen": {
-              "cost": 15
+              "cost": 8
             },
             "Street Food at Tsukiji": {
               "cost": 20
+            },
+            "Conveyor Belt Sushi (Kaitenzushi)": {
+              "cost": 13
+            },
+            "Tsukiji Outer Market Street Food": {
+              "cost": 13
+            },
+            "Omoide Yokocho (Piss Alley)": {
+              "cost": 25
+            },
+            "Maid Cafe Experience": {
+              "cost": 23
+            },
+            "Harajuku Crepe": {
+              "cost": 6
+            },
+            "Fluffy Pancakes": {
+              "cost": 12
+            },
+            "Monjayaki (Tsukishima)": {
+              "cost": 16
+            },
+            "Konbini (Convenience Store) Feast": {
+              "cost": 7
+            },
+            "Department Store Basement (Depachika)": {
+              "cost": 20
+            },
+            "Melon Pan": {
+              "cost": 4
+            },
+            "Tuna Auction Breakfast (Toyosu Market)": {
+              "cost": 40
+            },
+            "Animal Cafe (Hedgehog/Owl/Pig)": {
+              "cost": 16
             }
           },
           "Sightseeing": {
@@ -398,11 +554,83 @@
             },
             "Shibuya Crossing": {
               "cost": 0
+            },
+            "Tokyo Skytree": {
+              "cost": 16
+            },
+            "Shibuya Sky (Observation Deck)": {
+              "cost": 15
+            },
+            "TeamLab Planets (Toyosu)": {
+              "cost": 28
+            },
+            "TeamLab Borderless (Azabudai Hills)": {
+              "cost": 31
+            },
+            "Meiji Jingu Shrine": {
+              "cost": 0
+            },
+            "Shinjuku Gyoen National Garden": {
+              "cost": 3.50
+            },
+            "Tokyo Disneyland or DisneySea": {
+              "cost": 72
+            },
+            "Ghibli Museum (Mitaka)": {
+              "cost": 6.50
+            },
+            "Warner Bros. Studio Tour Tokyo (Harry Potter)": {
+              "cost": 46
+            },
+            "Go-Karting on Public Streets (2 hours)": {
+              "cost": 95
+            },
+            "Ueno Zoo": {
+              "cost": 4
+            },
+            "Inokashira Park Swan Boats": {
+              "cost": 6
+            },
+            "Sumo Morning Practice": {
+              "cost": 0
             }
           },
           "Shopping": {
-            "Ginza": {
-              "cost": 100
+            "Don Quijote (Donki)": {
+              "cost": 2
+            },
+            "Uniqlo Ginza (Flagship)": {
+              "cost": 20
+            },
+            "Gashapon (Capsule Toys)": {
+              "cost": 3.50
+            },
+            "Kappabashi Kitchen Town": {
+              "cost": 7
+            },
+            "Pokemon Center Tokyo DX": {
+              "cost": 30
+            },
+            "Loft (Shibuya)": {
+              "cost": 5.10
+            },
+            "Nakamise Shopping Street": {
+              "cost": 10
+            },
+            "Animate Akihabara": {
+              "cost": 10
+            },
+            "Shimokitazawa Vintage Clothing": {
+              "cost": 35
+            },
+            "Tokyu Hands": {
+              "cost": 12
+            },
+            "Ameyoko Market (Ueno)": {
+              "cost": 6.50
+            },
+            "Character Street (Tokyo Station)": {
+              "cost": 8
             }
           }
         }
@@ -501,6 +729,35 @@
             },
             "Nilometer": {
               "cost": 2
+            }
+          },
+          "Shopping": {
+            "Khan el-Khalili (Souvenirs)": {
+              "cost": 1
+            },
+            "Al-Khayamiya (Street of the Tentmakers)": {
+              "cost": 8
+            },
+            "Perfume Oils": {
+              "cost": 6
+            },
+            "Alabaster (Luxor Stone)": {
+              "cost": 8
+            },
+            "Spices at Al-Azhar Street": {
+              "cost": 1
+            },
+            "Fair Trade Egypt (Zamalek)": {
+              "cost": 16
+            },
+            "Silver Jewelry": {
+              "cost": 14
+            },
+            "Siwa dates or chocolate-covered dates": {
+              "cost": 4
+            },
+            "Diwan Bookstore": {
+              "cost": 18
             }
           }
         }
