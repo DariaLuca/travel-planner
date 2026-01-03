@@ -79,7 +79,10 @@ import { useRouter } from 'vue-router'
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
 
+import { useAuthStore } from '../stores/auth'
+
 const router = useRouter()
+const authStore = useAuthStore()
 const valid = ref(false)
 const email = ref('')
 const password = ref('')
@@ -101,8 +104,14 @@ const handleSubmit = () => {
     errorMsg.value = '' // Clear previous errors
 
     signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((data) => {
-            console.log("Successfully logged in!", data);
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log("Successfully logged in!", user);
+            authStore.setUser({
+                uid: user.uid,
+                email: user.email
+            })
             router.push('/')
         })
         .catch((error) => {

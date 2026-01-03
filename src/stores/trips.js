@@ -1,8 +1,12 @@
 import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
+import { useAuthStore } from './auth'
+import { db } from '../firebase'
+import { collection, addDoc, query, where, getDocs, deleteDoc, doc } from 'firebase/firestore'
 
 export const useTripsStore = defineStore('trips', {
     state: () => ({
+        userTrips: [],
         trips: [
             {
                 id: 'uuid_1',
@@ -293,21 +297,174 @@ export const useTripsStore = defineStore('trips', {
     }),
     getters: {
         getAllTrips: (state) => state.trips,
-        getTripById: (state) => (id) => state.trips.find(trip => trip.id === id),
+        getTripById: (state) => (id) => state.trips.find(trip => trip.id === id) || state.userTrips.find(trip => trip.id === id),
+        getMyTrips: (state) => state.userTrips,
+        getDestinations: (state) => {
+            const destinations = state.trips.map(trip => trip.destination)
+            return [...new Set(destinations)].sort()
+        },
+        getDestinationImage: (state) => (destination) => {
+            const trip = state.trips.find(t => t.destination === destination)
+            return trip ? trip.coverImage : ''
+        },
+        getTripActivities: (state) => (destination) => {
+            const activitiesByType = {}
+
+            // Find trips matching the destination
+            const matchingTrips = state.trips.filter(t => t.destination === destination)
+
+            matchingTrips.forEach(trip => {
+                // Handle new Firestore catalog structure
+                if (trip.rawCatalogData) {
+                    const raw = trip.rawCatalogData
+                    // Iterate over categories like "Food", "Sightseeing", "Shopping"
+                    Object.keys(raw).forEach(category => {
+                        if (category !== 'imageUrl') {
+                            const activities = raw[category]
+                            if (activities) {
+                                if (!activitiesByType[category]) {
+                                    activitiesByType[category] = []
+                                }
+                                Object.entries(activities).forEach(([desc, details]) => {
+                                    // Avoid duplicates
+                                    const exists = activitiesByType[category].find(a => a.description === desc)
+                                    if (!exists) {
+                                        activitiesByType[category].push({
+                                            description: desc,
+                                            cost: details.cost || 0
+                                        })
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+
+                // Handle legacy itinerary structure (if any)
+                if (trip.itinerary) {
+                    trip.itinerary.forEach(day => {
+                        if (day.activities) {
+                            day.activities.forEach(activity => {
+                                if (!activitiesByType[activity.type]) {
+                                    activitiesByType[activity.type] = []
+                                }
+                                // Avoid duplicates
+                                const exists = activitiesByType[activity.type].find(a => a.description === activity.description)
+                                if (!exists) {
+                                    activitiesByType[activity.type].push({
+                                        description: activity.description,
+                                        cost: activity.cost
+                                    })
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+            return activitiesByType
+        }
     },
     actions: {
-        addTrip(trip) {
+        async addTrip(trip) {
+            const authStore = useAuthStore()
             const newTrip = {
                 ...trip,
-                id: uuidv4()
+                id: uuidv4(),
+                userId: authStore.user?.uid
             }
-            this.trips.push(newTrip)
+            console.log("Adding trip for user:", newTrip.userId)
+            if (!newTrip.userId) {
+                console.error("User ID is missing! Trip cannot be saved securely.")
+                throw new Error("User not authenticated properly.")
+            }
+
+            try {
+                const docRef = await addDoc(collection(db, 'user_trips'), newTrip)
+                console.log("Trip saved with ID: ", docRef.id)
+                this.userTrips.push({ ...newTrip, id: docRef.id }) // Update with Firestore ID if needed, or just push newTrip
+            } catch (error) {
+                console.error("Error adding trip: ", error)
+                throw error // Re-throw to be caught by the view
+            }
         },
-        deleteTrip(id) {
+        async fetchUserTrips() {
+            const authStore = useAuthStore()
+            if (!authStore.user) {
+                this.userTrips = []
+                return
+            }
+
+            try {
+                const q = query(collection(db, 'user_trips'), where("userId", "==", authStore.user.uid))
+                const querySnapshot = await getDocs(q)
+                this.userTrips = querySnapshot.docs.map(doc => {
+                    const data = doc.data()
+                    return { ...data, id: doc.id }
+                })
+                console.log("Fetched user trips:", this.userTrips)
+            } catch (error) {
+                console.error("Error fetching trips: ", error)
+            }
+        },
+        async fetchPublicTrips() {
+            try {
+                const querySnapshot = await getDocs(collection(db, 'trips'))
+                if (!querySnapshot.empty) {
+                    const publicTrips = []
+                    querySnapshot.forEach(doc => {
+                        const countryName = doc.id
+                        const data = doc.data()
+                        if (data.Cities) {
+                            Object.entries(data.Cities).forEach(([cityName, cityData]) => {
+                                publicTrips.push({
+                                    id: `${countryName}_${cityName}`,
+                                    destination: `${cityName}, ${countryName}`,
+                                    coverImage: cityData.imageUrl || '',
+                                    dates: { start: '', end: '' }, // Placeholder to prevent UI errors
+                                    budget: 0,
+                                    // Store raw catalog data for activity parsing
+                                    rawCatalogData: cityData
+                                })
+                            })
+                        }
+                    })
+
+                    if (publicTrips.length > 0) {
+                        this.trips = publicTrips
+                        console.log("Fetched and parsed public trips from Firestore:", this.trips)
+                    }
+                } else {
+                    console.log("Firestore 'trips' collection is empty. Seeding with initial data...")
+                    const initialTrips = this.trips
+                    for (const trip of initialTrips) {
+                        const { id, ...tripData } = trip
+                        await addDoc(collection(db, 'trips'), tripData)
+                    }
+                    console.log("Database seeded successfully with initial destinations.")
+                }
+            } catch (error) {
+                console.error("Error fetching (or seeding) public catalog: ", error)
+            }
+        },
+        async deleteTrip(id) {
+            console.log("Attempting to delete trip with ID:", id)
+            const tripIndex = this.userTrips.findIndex(t => t.id === id)
+            if (tripIndex !== -1) {
+                try {
+                    await deleteDoc(doc(db, 'user_trips', id))
+                    this.userTrips.splice(tripIndex, 1) // Remove locally only after successful delete
+                    console.log("Trip deleted from Firestore: ", id)
+                } catch (error) {
+                    console.error("Error deleting trip: ", error)
+                    alert("Failed to delete trip: " + error.message)
+                }
+            } else {
+                console.error("Trip not found in local store:", id)
+            }
             this.trips = this.trips.filter(t => t.id !== id)
         },
         addActivityToDay(tripId, dayNumber, activity) {
-            const trip = this.getTripById(tripId)
+            const trip = this.getTripById(tripId) || this.userTrips.find(t => t.id === tripId)
             if (trip) {
                 const day = trip.itinerary.find(d => d.dayNumber === dayNumber)
                 if (day) {

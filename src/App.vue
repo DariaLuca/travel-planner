@@ -26,13 +26,27 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
+import { useAuthStore } from './stores/auth'
+import { useTripsStore } from './stores/trips'
 
 const router = useRouter()
+const authStore = useAuthStore()
 const isLoggedIn = ref(false)
 
 onMounted(() => {
   onAuthStateChanged(auth, (user) => {
     isLoggedIn.value = !!user
+    if (user) {
+      authStore.setUser({
+        uid: user.uid,
+        email: user.email
+      })
+      const tripsStore = useTripsStore()
+      tripsStore.fetchUserTrips()
+      tripsStore.fetchPublicTrips()
+    } else {
+      authStore.clearUser()
+    }
   })
 })
 

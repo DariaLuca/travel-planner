@@ -3,6 +3,7 @@
     "France": {
       "Cities": {
         "Paris": {
+          "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000&auto=format&fit=crop",
           "Food": {
             "Kozy Bosquet": {
               "cost": 20
@@ -99,6 +100,7 @@
     "Spain": {
       "Cities": {
         "Barcelona": {
+          "imageUrl": "https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=1000",
           "Food": {
             "Brunch & Cake": {
               "cost": 20
@@ -140,6 +142,7 @@
           }
         },
         "Valencia": {
+          "imageUrl": "https://images.unsplash.com/photo-1558642084-fd07fae5282e?q=80&w=1000",
           "Sightseeing": {
             "City of Arts and Sciences": {
               "cost": 40
@@ -147,6 +150,7 @@
           }
         },
         "Madrid": {
+          "imageUrl": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=1000",
           "Food": {
             "Unknown Restaurant at San Ginés": {
               "cost": 8
@@ -166,6 +170,7 @@
     "USA": {
       "Cities": {
         "New York": {
+          "imageUrl": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1000",
           "Food": {
             "Ess-a-Bagel": {
               "cost": 15
@@ -265,6 +270,7 @@
           }
         },
         "Miami": {
+          "imageUrl": "https://images.unsplash.com/photo-1535498730771-e735b998cd64?q=80&w=1000&auto=format&fit=crop",
           "Sightseeing": {
             "South Beach": {
               "cost": 0
@@ -280,6 +286,7 @@
           }
         },
         "Chicago": {
+          "imageUrl": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=1000",
           "Sightseeing": {
             "The Bean (Cloud Gate)": {
               "cost": 0
@@ -299,6 +306,7 @@
     "UK": {
       "Cities": {
         "London": {
+          "imageUrl": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000",
           "Sightseeing": {
             "Big Ben & Parliament": {
               "cost": 0
@@ -318,6 +326,7 @@
     "Turkey": {
       "Cities": {
         "Istanbul": {
+          "imageUrl": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1000",
           "Sightseeing": {
             "Hagia Sophia": {
               "cost": 0
@@ -342,6 +351,7 @@
     "Indonesia": {
       "Cities": {
         "Bali": {
+          "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1000",
           "Food": {
             "Nasi Goreng Warung": {
               "cost": 5
@@ -367,6 +377,7 @@
     "Japan": {
       "Cities": {
         "Tokyo": {
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000",
           "Food": {
             "Sushi Dai": {
               "cost": 50
@@ -400,6 +411,7 @@
     "Egypt": {
       "Cities": {
         "Cairo": {
+          "imageUrl": "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1000",
           "Food": {
             "Abou Tarek": {
               "cost": 5
@@ -425,28 +437,28 @@
             "Falafel (Ta'ameya) Sandwich": {
               "cost": 0.50
             },
-            "Hawawshi":{
+            "Hawawshi": {
               "cost": 1.40
             },
-            "Sugarcane Juice":{
+            "Sugarcane Juice": {
               "cost": 0.50
             },
-            "Om Ali Bread pudding with milk, nuts, and cream":{
+            "Om Ali Bread pudding with milk, nuts, and cream": {
               "cost": 2
             },
-            "Grilled Corn":{
+            "Grilled Corn": {
               "cost": 0.50
             },
-            "Roasted Sweet Potato":{
+            "Roasted Sweet Potato": {
               "cost": 0.60
             },
-            "Sobia A coconut-milk rice drink":{
+            "Sobia A coconut-milk rice drink": {
               "cost": 0.50
             },
-            "Groppi":{
+            "Groppi": {
               "cost": 1.80
             },
-            "Felucca Ride with Pizza":{
+            "Felucca Ride with Pizza": {
               "cost": 12
             }
           },
@@ -471,27 +483,28 @@
             },
             "Ibn Tulun Mosque": {
               "cost": 0
-          },
+            },
             "Coptic Cairo": {
               "cost": 0
-          },
+            },
             "Baron Empain Palace": {
               "cost": 3.60
-          },
-          "Cave Church": {
+            },
+            "Cave Church": {
               "cost": 0
-          },
-          "Cairo Tower": {
+            },
+            "Cairo Tower": {
               "cost": 7
-          },
-          "Al-Azhar Park": {
+            },
+            "Al-Azhar Park": {
               "cost": 1
-          },
-          "Nilometer": {
+            },
+            "Nilometer": {
               "cost": 2
+            }
           }
         }
       }
     }
   }
-}}
+}
