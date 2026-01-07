@@ -42,39 +42,8 @@
 
     <!-- Guest Landing View -->
     <template v-else>
-      <v-row class="align-center justify-center text-center py-16">
-        <v-col cols="12" md="8">
-          <v-icon icon="mdi-compass-outline" size="100" color="primary" class="mb-6"></v-icon>
-          <h1 class="text-h2 font-weight-bold mb-4 text-primary">Travel Planner</h1>
-          <p class="text-h5 text-grey-darken-1 mb-8">
-            Plan your dream vacation, track your budget, and organize your itinerary all in one place.
-          </p>
-          <div class="d-flex justify-center ga-4">
-            <v-btn
-              color="primary"
-              size="x-large"
-              to="/login"
-              variant="elevated"
-              elevation="4"
-              width="150"
-            >
-              Login
-            </v-btn>
-            <v-btn
-              color="primary"
-              size="x-large"
-              to="/register"
-              variant="outlined"
-              width="150"
-            >
-              Sign Up
-            </v-btn>
-          </div>
-        </v-col>
-      </v-row>
-
       <!-- Public Trips Grid -->
-      <v-row>
+      <v-row class="mt-4">
         <v-col cols="12">
             <h2 class="text-h4 text-primary font-weight-bold mb-4">Explore Destinations</h2>
         </v-col>

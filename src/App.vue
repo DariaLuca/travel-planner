@@ -1,12 +1,31 @@
 <template>
   <v-app>
     <v-app-bar color="primary" density="compact" elevation="2">
-      <v-toolbar-title class="text-uppercase font-weight-bold ml-4">
+      <v-btn icon="mdi-home" to="/" variant="text" class="ml-2"></v-btn>
+      <v-toolbar-title class="text-uppercase font-weight-bold ml-2">
         Travel Planner
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      <template v-if="!isLoggedIn">
+        <v-btn
+          to="/login"
+          variant="outlined"
+          rounded="pill"
+          class="mr-2"
+        >
+          Login
+        </v-btn>
+        <v-btn
+          to="/register"
+          variant="outlined"
+          rounded="pill"
+          class="mr-4"
+        >
+          Register
+        </v-btn>
+      </template>
       <v-btn
-        v-if="isLoggedIn"
+        v-else
         variant="text"
         prepend-icon="mdi-logout"
         @click="handleSignOut"
